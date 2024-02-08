@@ -33,7 +33,7 @@
         let audio = new Audio(currentAud);
 
         function play(note) {
-            currentAud = note;
+            currentAud = `./audio/${note}`;
             audio.play()
         }
 
