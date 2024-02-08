@@ -57,6 +57,9 @@ input[type=radio] {
 
 label[for='pitch'] {
     font-size: 30px;
+    color: #b6b6b6;
+    margin-right: 30px;
+    margin-left: -10px;
 }
 
 .submitContainer {
@@ -90,11 +93,12 @@ label[for='pitch'] {
     font-size: large;
 }
 
-.result-container {
+.result-container{
     text-align: center;
     margin-top: 20px;
 }
 
 #result {
     font-size: 30px;
+    color: #b6b6b6;
 }
