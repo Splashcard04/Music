@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music | Drones</title>
+</head>
+<body>
+
+    <div class="button-container">
+
+        <button id="c" onclick="play('c')" class="notes">C</button>
+        <button id="c#" onclick="play('csharp')" class="notes">C#</button>
+        <button id="d" onclick="play('d')" class="notes">D</button>
+        <button id="d#" onclick="play('dsharp')" class="notes">D#</button>
+        <button id="e" onclick="play('e')" class="notes">E</button>
+        <button id="f" onclick="play('f')" class="notes">F</button>
+        <button id="f#" onclick="play('fsharp')" class="notes">F#</button>
+        <button id="g" onclick="play('g')" class="notes">G</button>
+        <button id="g#" onclick="play('gsharp')" class="notes">G#</button>
+        <button id="a" onclick="play('a')" class="notes">A</button>
+        <button id="a#" onclick="play('asharp')" class="notes">A#</button>
+
+
+        <br>
+        <button id="stop" onclick="stop()">Stop</button>
+
+    </div>
+
+    <script>
+
+        let currentAud = ''
+        let audio = new Audio(currentAud)
+
+        function play(note) {
+            currentAud = note
+            audio.play()
+        }
+
+        function stop() {
+            audio.pause()
+        }
+
+    </script>
+    
+</body>
+</html>

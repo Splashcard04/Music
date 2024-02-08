@@ -89,7 +89,7 @@
 
         let currentNote = notes[Math.floor(Math.random() * notes.length)]
 
-        let noteAud = new Audio(`./audio/${currentNote}.mp3`)
+        let noteAud = new Audio(`/audio/${currentNote}.mp3`)
 
         soundBtn.addEventListener('click', function() {
             noteAud.play()
@@ -117,7 +117,7 @@
             }
             
             currentNote = notes[Math.floor(Math.random()*notes.length)]
-            noteAud = new Audio(`./audio/${currentNote}.mp3`)
+            noteAud = new Audio(`/audio/${currentNote}.mp3`)
 
 
         })
