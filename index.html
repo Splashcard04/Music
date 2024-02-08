@@ -1,55 +1,73 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Pitch Test</title>
+    <title>Pitch Test</title>
+    <link rel="icon" type="image/png" href="./assets/icon.png">
+    <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 <body>
-    Input the Correct Pitch<br>
 
-    <button id="soundBtn">Play Sound</button>
+    <div class="topBar">
+
+        <h1 id="title">Pitch Test</h1>
+
+        <p id="score">Score: 0</p>
+
+    </div>
+
+    <p id="subtitle">Input the Correct Pitch</p>
+    <br>
+
+    <div class="btnContainer">
+        <button id="soundBtn">Play Sound</button>
+    </div>
 
     <form id="form">
-        <input type="radio" name="pitch" id="c">
-        <label for="pitch" id="C">C</label>
+        <div class="radioContainer">
+            <input type="radio" name="pitch" id="c">
+            <label for="pitch" id="C">C</label>
+            
+            <input type="radio" name="pitch" id="csharp">
+            <label for="pitch" id="C#">C#</label>
+            
+            <input type="radio" name="pitch" id="d">
+            <label for="pitch" id="D">D</label>
+            
+            <input type="radio" name="pitch" id="dsharp">
+            <label for="pitch" id="D#">D#</label>
+            
+            <input type="radio" name="pitch" id="e">
+            <label for="pitch" id="E">E</label>
+            
+            <input type="radio" name="pitch" id="f">
+            <label for="pitch" id="F">F</label>
+            
+            <input type="radio" name="pitch" id="fsharp">
+            <label for="pitch" id="F#">F#</label>
+            
+            <input type="radio" name="pitch" id="g">
+            <label for="pitch" id="G">G</label>
+            
+            <input type="radio" name="pitch" id="a">
+            <label for="pitch" id="A">A</label>
+            
+            <input type="radio" name="pitch" id="asharp">
+            <label for="pitch" id="A#">A#</label>
+            
+            <input type="radio" name="pitch" id="b">
+            <label for="pitch" id="b">B</label>
+        </div>
         <br>
-        <input type="radio" name="pitch" id="csharp">
-        <label for="pitch" id="C#">C#</label>
-        <br>
-        <input type="radio" name="pitch" id="d">
-        <label for="pitch" id="D">D</label>
-        <br>
-        <input type="radio" name="pitch" id="dsharp">
-        <label for="pitch" id="D#">D#</label>
-        <br>
-        <input type="radio" name="pitch" id="e">
-        <label for="pitch" id="E">E</label>
-        <br>
-        <input type="radio" name="pitch" id="f">
-        <label for="pitch" id="F">F</label>
-        <br>
-        <input type="radio" name="pitch" id="fsharp">
-        <label for="pitch" id="F#">F#</label>
-        <br>
-        <input type="radio" name="pitch" id="g">
-        <label for="pitch" id="G">G</label>
-        <br>
-        <input type="radio" name="pitch" id="a">
-        <label for="pitch" id="A">A</label>
-        <br>
-        <input type="radio" name="pitch" id="asharp">
-        <label for="pitch" id="A#">A#</label>
-        <br>
-        <input type="radio" name="pitch" id="b">
-        <label for="pitch" id="b">B</label>
-        <br>
-
-        <input type="submit" name="submit" value="SubmitQuiz" onClick="result()">
+        <div class="submitContainer">
+            <input type="submit" name="submit" value="Submit" onClick="result()" id="submitBtn">
+        </div>
     </form>
 
     <br>
 
-    <p id="result"></p>
-    <p id="score">Score: 0</p>
+    <div class="result-container">
+        <p id="result"></p>
+    </div>
 
 
 
@@ -81,22 +99,27 @@
 
             let correct=false
 
-                if(document.getElementById(`${currentNote}`).checked)
-                {
-                    correct=true
-                }
-                if(correct) {
-                    resP.innerHTML="Correct!"
-                    score++
-                    scoreP.innerHTML=`Score: ${score}`
-                } else {
-                    resP.innerHTML="Incorrect!"
-                    score--
-                    scoreP.innerHTML=`Score: ${score}`
-                }
-                currentNote = notes[Math.floor(Math.random()*notes.length)]
-                noteAud = new Audio(`./audio/${currentNote}.mp3`)
+            if(document.getElementById(`${currentNote}`).checked)
+            {
+                correct=true
+            }
+            if(correct) {
+                resP.innerHTML="Correct!"
+                score++
+                scoreP.innerHTML=`Score: ${score}`
+            } else {
+                resP.innerHTML=`Incorrect! Correct answer: ${currentNote.toUpperCase().replace('SHARP', '#')}`
+                score--
+                scoreP.innerHTML=`Score: ${score}`
+            }
+            
+            currentNote = notes[Math.floor(Math.random()*notes.length)]
+            noteAud = new Audio(`./audio/${currentNote}.mp3`)
+
+
         })
+
+
     </script>
 
 </body>
