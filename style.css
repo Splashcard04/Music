@@ -1,0 +1,27 @@
+.top-bar {
+    text-align: center;
+    background-color: gray;
+    border-radius: 5px
+}
+        
+#header {
+    font-size: 30px;
+    color: white;
+    margin-bottom: 50px;
+}
+        
+.button-container {
+    text-align: center
+}
+        
+.btn {
+    scale: 150%;
+    float: center;
+    background-color: green;
+    padding: 10px;
+    border: none;
+    font-color: white;
+    border-radius: 7px;
+}
+        
+        
